@@ -1,4 +1,10 @@
 package com.kta.explorecrete.service;
 
-public class PersonService {
+import com.kta.explorecrete.entity.Person;
+
+import java.util.List;
+
+
+public interface PersonService {
+    List<Person> findAll();
 }

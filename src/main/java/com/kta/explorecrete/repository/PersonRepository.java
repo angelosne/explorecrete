@@ -1,4 +1,12 @@
 package com.kta.explorecrete.repository;
 
-public class PersonRepository {
+import com.kta.explorecrete.entity.Person;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface PersonRepository extends JpaRepository<Person, Integer> {
+
 }
