@@ -1,0 +1,23 @@
+package com.kta.explorecrete.service;
+
+import com.kta.explorecrete.entity.Tour;
+import com.kta.explorecrete.repository.PersonRepository;
+import com.kta.explorecrete.repository.TourRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TourServiceImpl implements TourService {
+
+    private final TourRepository tourRepository;
+
+    public TourServiceImpl(TourRepository tourRepository) {
+        this.tourRepository = tourRepository;
+    }
+
+    @Override
+    public List<Tour> findAll() {
+        return null;
+    }
+}
