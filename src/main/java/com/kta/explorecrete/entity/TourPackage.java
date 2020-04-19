@@ -13,7 +13,7 @@ public class TourPackage {
     private String name;
 
     @ManyToOne
-private Tour tour;
+    private Tour tour;
 
     public TourPackage() {
     }

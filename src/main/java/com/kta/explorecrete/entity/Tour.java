@@ -6,9 +6,9 @@ import javax.persistence.*;
 public class Tour {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(length=80)
+    @Column(length = 80)
     private String title;
     @Column(length = 300)
     private String description;

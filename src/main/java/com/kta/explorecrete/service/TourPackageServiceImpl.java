@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TourPackageServiceImpl implements TourPackageService{
+public class TourPackageServiceImpl implements TourPackageService {
     private final TourPackageRepository tourPackageRepository;
 
     public TourPackageServiceImpl(TourPackageRepository tourPackageRepository) {

@@ -5,7 +5,7 @@ import com.kta.explorecrete.repository.TourPackageRatingRepository;
 
 import java.util.List;
 
-public class TourPackageRatingServiceImpl implements TourPackageRatingService{
+public class TourPackageRatingServiceImpl implements TourPackageRatingService {
     private final TourPackageRatingRepository tourPackageRatingRepository;
 
     public TourPackageRatingServiceImpl(TourPackageRatingRepository tourPackageRatingRepository) {

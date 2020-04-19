@@ -15,9 +15,6 @@ public class TourController {
         this.tourService = tourService;
 
 
-
-
-
     }
 
 }

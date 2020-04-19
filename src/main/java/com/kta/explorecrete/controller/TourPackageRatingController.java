@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TourPackageRatingController {
 
-private final TourPackageRatingService tourPackageRatingService;
+    private final TourPackageRatingService tourPackageRatingService;
 
     public TourPackageRatingController(TourPackageRatingService tourPackageRatingService) {
         this.tourPackageRatingService = tourPackageRatingService;
     }
 
-public ResponseEntity getAllTourPackageRating() {
+    public ResponseEntity getAllTourPackageRating() {
         return new ResponseEntity(tourPackageRatingService.findAll(), HttpStatus.OK);
-}
+    }
 
 }
