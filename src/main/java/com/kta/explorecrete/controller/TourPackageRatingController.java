@@ -14,8 +14,9 @@ public class TourPackageRatingController {
     public TourPackageRatingController(TourPackageRatingService tourPackageRatingService) {
         this.tourPackageRatingService = tourPackageRatingService;
     }
+
     @GetMapping("api/ratings")
-      public ResponseEntity getAllTourPackageRating() {
+    public ResponseEntity getAllTourPackageRating() {
         return new ResponseEntity(tourPackageRatingService.findAll(), HttpStatus.OK);
     }
 

@@ -1,6 +1,7 @@
 package com.kta.explorecrete.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class TourPackage {
@@ -11,9 +12,8 @@ public class TourPackage {
     private int id;
     @Column(length = 140)
     private String name;
-
-    @ManyToOne
-    private Tour tour;
+    @OneToMany(mappedBy = "tourPackage")
+    private Set<TourPackageRating> ratings;
 
     public TourPackage() {
     }
@@ -32,5 +32,13 @@ public class TourPackage {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<TourPackageRating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(Set<TourPackageRating> ratings) {
+        this.ratings = ratings;
     }
 }

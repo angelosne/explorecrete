@@ -18,6 +18,10 @@ public class Tour {
     private String keywords;
     private Region region;
 
+    @ManyToOne
+    private TourPackage tourPackage;
+
+
     public Tour() {
     }
 
@@ -75,5 +79,13 @@ public class Tour {
 
     public void setRegion(Region region) {
         this.region = region;
+    }
+
+    public TourPackage getTourPackage() {
+        return tourPackage;
+    }
+
+    public void setTourPackage(TourPackage tourPackage) {
+        this.tourPackage = tourPackage;
     }
 }

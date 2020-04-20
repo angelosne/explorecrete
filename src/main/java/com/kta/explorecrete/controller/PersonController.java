@@ -14,7 +14,7 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @GetMapping("/api/person")
+    @GetMapping("/api/persons")
     public ResponseEntity getAllPersons() {
         return new ResponseEntity(personService.findAll(), HttpStatus.OK);
     }
