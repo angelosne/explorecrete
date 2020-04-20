@@ -17,7 +17,7 @@ public class TourController {
         this.tourService = tourService;
     }
 
-    @GetMapping("/tours")
+    @GetMapping("api/tours")
     public ResponseEntity getAllTour() {
         return new ResponseEntity(tourService.findAll(), HttpStatus.OK);
     }
