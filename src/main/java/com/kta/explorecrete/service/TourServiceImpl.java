@@ -18,6 +18,6 @@ public class TourServiceImpl implements TourService {
 
     @Override
     public List<Tour> findAll() {
-        return null;
+        return tourRepository.findAll();
     }
 }
