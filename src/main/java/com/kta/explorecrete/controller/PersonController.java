@@ -3,11 +3,12 @@ package com.kta.explorecrete.controller;
 import com.kta.explorecrete.service.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class PersonController {
+
     private final PersonService personService;
 
     public PersonController(PersonService personService) {

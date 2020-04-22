@@ -4,5 +4,5 @@ public enum Region {
     HERAKLION,
     CHANIA,
     RETHYMNO,
-    LASSITHI
+    LASITHI
 }
