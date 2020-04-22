@@ -15,8 +15,6 @@ public class Person {
     private String surname;
     @Column(length = 30)
     private String email;
-    @OneToMany(mappedBy = "person")
-    private Set<TourPackageRating> ratings;
 
     public Person() {
     }
@@ -53,11 +51,4 @@ public class Person {
         this.email = email;
     }
 
-    public Set<TourPackageRating> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(Set<TourPackageRating> ratings) {
-        this.ratings = ratings;
-    }
 }
