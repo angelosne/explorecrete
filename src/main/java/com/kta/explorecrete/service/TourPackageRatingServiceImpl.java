@@ -19,4 +19,9 @@ public class TourPackageRatingServiceImpl implements TourPackageRatingService {
     public List<TourPackageRating> findAll() {
         return tourPackageRatingRepository.findAll();
     }
+
+    @Override
+    public List<TourPackageRating> findAllByTourPackageId(int id) {
+        return tourPackageRatingRepository.findAllByTourPackageId(id);
+    }
 }

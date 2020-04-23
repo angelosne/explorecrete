@@ -1,19 +1,20 @@
 package com.kta.explorecrete.controller;
 
-import com.kta.explorecrete.service.TourServiceImpl;
+import com.kta.explorecrete.service.TourService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController
+@Controller
 public class TourController {
 
-    private TourServiceImpl tourService;
+    private TourService tourService;
 
-    public TourController(TourServiceImpl tourService) {
+    public TourController(TourService tourService) {
         this.tourService = tourService;
     }
 
