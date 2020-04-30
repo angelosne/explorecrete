@@ -15,7 +15,6 @@
     </thead>
     <tbody>
     <tr th:each="tourPackage : ${tourPackages}">
-        <td><a th:href="${'/tourPackage/' + d.getDirectorid()}"><span th:text="${d.getDirectorid()}"></span></a></td>
         <td th:text="${tourPackage.getId()}">id</td>
         <td th:text="${tourPackage.getName()}">title</td>
     </tr>
