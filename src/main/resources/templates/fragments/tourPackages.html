@@ -16,7 +16,7 @@
     <tbody>
     <tr th:each="tourPackage : ${tourPackages}">
         <td th:text="${tourPackage.getId()}">id</td>
-        <td th:text="${tourPackage.getName()}">title</td>
+        <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tourPackage.getId()})}" th:text="${tourPackage.getName()}">name</a></td>
     </tr>
     </tbody>
 </table>
