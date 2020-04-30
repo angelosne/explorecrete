@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="el" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Welcome to KTA tours</title>
 </head>
 <body>
-<h1>Καλώς ορίσατε στο "KTA Tours"&trade;</h1>
-<h2>Παρακαλώ επιλέξτε έναν απο τους παρακάω προορισμούς</h2>
+<h1 th:text="${welcomeMessage}">welcome message</h1>
+<h2 th:text="${chooseDestination}">choose destination</h2>
 <div>
     <ul>
         <li><a href="/api/tours/4">Ρέθυμνο</a></li>
