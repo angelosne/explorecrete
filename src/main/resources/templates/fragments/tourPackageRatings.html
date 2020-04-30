@@ -19,7 +19,7 @@
     <tbody>
     <tr th:each="tourPackageRating : ${tourPackageRatings}">
         <td th:text="${tourPackageRating.getId()}">id</td>
-        <td th:text="${tourPackageRating.getTourPackage().getName()}">Tour Package</td>
+        <td><a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackageRating.getTourPackage().getId()})}" th:text="${tourPackageRating.getTourPackage().getName()}">name</a></td>
         <td th:text="${tourPackageRating.getPerson().getName()}">Person</td>
         <td th:text="${tourPackageRating.getScore()}">Score</td>
         <td th:text="${tourPackageRating.getComments()}">Comments</td>

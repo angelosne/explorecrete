@@ -38,4 +38,11 @@ public class TourPackageRatingController {
         model.addAttribute("tourPackageRatings",tourPackageRatings);
         return "fragments/tourPackageRatings";
     }
+
+    @GetMapping("/tourPackageRating/{tourPackageId}")
+    public String getTourById(@PathVariable("tourPackageId") int tourPackageId,Model model){
+        List<TourPackageRating> tourPackageRatings = tourPackageRatingService.findAllByTourPackageId(tourPackageId);
+        model.addAttribute("tourPackageRatings",tourPackageRatings);
+        return "fragments/tourPackageRatings";
+    }
 }
