@@ -29,7 +29,8 @@
             <td th:text="${tour.getDuration()}">duration</td>
             <td th:text="${tour.getKeywords()}">keywords</td>
             <td th:text="${tour.getRegion()}">region</td>
-            <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}" th:text="${tour.getTourPackage().getName()}">name</a></td>
+            <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
+                   th:text="${tour.getTourPackage().getName()}">name</a></td>
         </tr>
         </tbody>
     </table>

@@ -7,6 +7,7 @@ import com.kta.explorecrete.repository.TourRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TourServiceImpl implements TourService {
@@ -25,5 +26,11 @@ public class TourServiceImpl implements TourService {
     @Override
     public List<Tour> findAllByTourPackageId(int id) {
         return tourRepository.findAllByTourPackageId(id);
+    }
+
+    @Override
+    public Optional<Tour> findById(int id) {
+        Optional<Tour> tour = tourRepository.findById(id);
+        return tour;
     }
 }
