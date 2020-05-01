@@ -12,9 +12,9 @@
     <p th:text="'Διάρκεια: ' + ${tour.get().getDuration()} + ' ώρες'"></p>
     <p th:text="'Τιμή: ' + ${tour.get().getPrice()} + ' ευρώ'"></p>
     <p th:text="'Λέξεις κλειδιά: ' + ${tour.get().getKeywords()}"></p>
-    <p>
+    <p>Πακέτο:
         <a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.get().getTourPackage().getId()})}"
-           th:text="'Πακέτο: ' + ${tour.get().getTourPackage().getName()}">name</a></p>
+           th:text="${tour.get().getTourPackage().getName()}">name</a></p>
 </div>
 </body>
 </html>

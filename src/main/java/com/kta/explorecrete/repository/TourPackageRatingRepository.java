@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface TourPackageRatingRepository extends JpaRepository<TourPackageRating, Integer> {
     List<TourPackageRating> findAllByTourPackageId(int id);
+    List<TourPackageRating> findAllByPersonId(int id);
 }
