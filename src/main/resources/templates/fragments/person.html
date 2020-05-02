@@ -9,7 +9,7 @@
 <div>
     <p th:text="'Email: ' + ${person.get().getEmail()}">email</p>
     <a th:href="@{/tourPackageRatingByPerson/{personId}(personId=${person.get().getId()})}"
-       th:text="Αξιολογήσεις"></a>
+       th:text="'Αξιολογήσεις χρηστη'"></a>
 </div>
 </body>
 </html>
