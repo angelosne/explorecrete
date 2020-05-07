@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Tours</title>
-</head>
-<body>
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Duration</th>
-            <th>Keywords</th>
-            <th>Region</th>
-            <th>TourPackage</th>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tours</title>
+    </head>
+    <body>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Duration</th>
+                    <th>Keywords</th>
+                    <th>Region</th>
+                    <th>TourPackage</th>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="tour : ${tours}">
-            <td th:text="${tour.getId()}">id</td>
-            <td><a th:href="@{/tournumber/{tourId}(tourId=${tour.getId()})}"
-                   th:text="${tour.getTitle()}">title</a></td>
-            <td th:text="${tour.getDescription()}">description</td>
-            <td th:text="${tour.getPrice()}">price</td>
-            <td th:text="${tour.getDuration()}">duration</td>
-            <td th:text="${tour.getKeywords()}">keywords</td>
-            <td th:text="${tour.getRegion()}">region</td>
-            <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
-                   th:text="${tour.getTourPackage().getName()}">name</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-</body>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="tour : ${tours}">
+                    <td th:text="${tour.getId()}">id</td>
+                    <td><a th:href="@{/tournumber/{tourId}(tourId=${tour.getId()})}"
+                           th:text="${tour.getTitle()}">title</a></td>
+                    <td th:text="${tour.getDescription()}">description</td>
+                    <td th:text="${tour.getPrice()}">price</td>
+                    <td th:text="${tour.getDuration()}">duration</td>
+                    <td th:text="${tour.getKeywords()}">keywords</td>
+                    <td th:text="${tour.getRegion()}">region</td>
+                    <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
+                           th:text="${tour.getTourPackage().getName()}">name</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>

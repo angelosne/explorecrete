@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Tour Package Ratings</title>
-</head>
-<body>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Tour Package</th>
-        <th>Person</th>
-        <th>Score</th>
-        <th>Comments</th>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tour Package Ratings</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tour Package</th>
+                <th>Person</th>
+                <th>Score</th>
+                <th>Comments</th>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="tourPackageRating : ${tourPackageRatings}">
-        <td th:text="${tourPackageRating.getId()}">id</td>
-        <td>
-            <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackageRating.getTourPackage().getId()})}"
-               th:text="${tourPackageRating.getTourPackage().getName()}">name</a></td>
-        <td th:text="${tourPackageRating.getPerson().getName()}">Person</td>
-        <td th:text="${tourPackageRating.getScore()}">Score</td>
-        <td th:text="${tourPackageRating.getComments()}">Comments</td>
-    </tr>
-    </tbody>
-</table>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tourPackageRating : ${tourPackageRatings}">
+                <td th:text="${tourPackageRating.getId()}">id</td>
+                <td>
+                    <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackageRating.getTourPackage().getId()})}"
+                       th:text="${tourPackageRating.getTourPackage().getName()}">name</a></td>
+                <td th:text="${tourPackageRating.getPerson().getName()}">Person</td>
+                <td th:text="${tourPackageRating.getScore()}">Score</td>
+                <td th:text="${tourPackageRating.getComments()}">Comments</td>
+            </tr>
+            </tbody>
+        </table>
 
-</body>
+    </body>
 </html>

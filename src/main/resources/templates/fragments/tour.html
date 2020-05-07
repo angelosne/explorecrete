@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Tour</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tour</title>
+    </head>
+    <body>
 
-<h1 th:text="${tour.get().getTitle()}"></h1>
-<div>
-    <p th:text="${tour.get().getDescription()}"></p>
-    <p th:text="'Διάρκεια: ' + ${tour.get().getDuration()} + ' ώρες'"></p>
-    <p th:text="'Τιμή: ' + ${tour.get().getPrice()} + ' ευρώ'"></p>
-    <p th:text="'Λέξεις κλειδιά: ' + ${tour.get().getKeywords()}"></p>
-    <p>Πακέτο:
-        <a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.get().getTourPackage().getId()})}"
-           th:text="${tour.get().getTourPackage().getName()}">name</a></p>
-</div>
-</body>
+        <h1 th:text="${tour.get().getTitle()}"></h1>
+        <div>
+            <p th:text="${tour.get().getDescription()}"></p>
+            <p th:text="'Διάρκεια: ' + ${tour.get().getDuration()} + ' ώρες'"></p>
+            <p th:text="'Τιμή: ' + ${tour.get().getPrice()} + ' ευρώ'"></p>
+            <p th:text="'Λέξεις κλειδιά: ' + ${tour.get().getKeywords()}"></p>
+            <p>Πακέτο:
+                <a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.get().getTourPackage().getId()})}"
+                   th:text="${tour.get().getTourPackage().getName()}">name</a></p>
+        </div>
+    </body>
 </html>
