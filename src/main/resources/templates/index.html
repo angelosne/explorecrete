@@ -1,25 +1,8 @@
-<!DOCTYPE html>
-<html lang="el" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome to KTA tours</title>
-</head>
-<body>
-<h1 th:text="${welcomeMessage}">welcome message</h1>
-<h2 th:text="${chooseDestination}">choose destination</h2>
-<div>
-    <p><a href="/tourPackage">Δείτε όλα τα πακέτα</a></p>
-    <p><a href="/tour">Δείτε όλες τις εκδρομές</a></p>
-</div>
-
-<h3>Τι είπαν για εμάς</h3>
-<div>
-    <p><a href="/tourPackageRating">Αξιολογήσεις</a></p>
-</div>
-<h3>Χρήστες</h3>
-<div>
-    <p><a href="/person">Χρήστες</a></p>
-</div>
-
-</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}" with:title="'Welcome to our page'">
+    <th:block layout:fragment="content">
+        <h1>This is index page</h1>
+    </th:block>
 </html>
