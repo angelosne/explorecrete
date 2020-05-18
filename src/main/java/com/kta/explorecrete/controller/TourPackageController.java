@@ -1,15 +1,12 @@
 package com.kta.explorecrete.controller;
 
-import com.kta.explorecrete.entity.Person;
 import com.kta.explorecrete.entity.TourPackage;
 import com.kta.explorecrete.service.TourPackageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -31,7 +28,7 @@ public class TourPackageController {
     public String getPersonList(Model model){
         List<TourPackage> tourPackages = tourPackageService.findAll();
         model.addAttribute("tourPackages",tourPackages);
-        return "fragments/tourPackages";
+        return "tourPackages";
     }
 
 }

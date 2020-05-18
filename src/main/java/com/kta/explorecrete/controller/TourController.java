@@ -1,6 +1,5 @@
 package com.kta.explorecrete.controller;
 
-import com.kta.explorecrete.entity.Person;
 import com.kta.explorecrete.entity.Tour;
 import com.kta.explorecrete.service.TourService;
 import org.springframework.http.HttpStatus;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,21 +36,21 @@ public class TourController {
     public String getTourList(Model model){
         List<Tour> tours = tourService.findAll();
         model.addAttribute("tours",tours);
-        return "fragments/tours";
+        return "tours";
     }
 
     @GetMapping("/tour/{tourPackageId}")
     public String getToursByTourPackageId(@PathVariable int tourPackageId,Model model){
         List<Tour> tours = tourService.findAllByTourPackageId(tourPackageId);
         model.addAttribute("tours",tours);
-        return "fragments/tours";
+        return "tours";
     }
 
     @GetMapping("/tournumber/{tourId}")
     public String getTourById(@PathVariable int tourId,Model model){
         Optional<Tour> tour = tourService.findById(tourId);
         model.addAttribute("tour",tour);
-        return "fragments/tour";
+        return "tour";
     }
 
 

@@ -1,6 +1,5 @@
 package com.kta.explorecrete.controller;
 
-import com.kta.explorecrete.entity.Tour;
 import com.kta.explorecrete.entity.TourPackageRating;
 import com.kta.explorecrete.service.TourPackageRatingService;
 import org.springframework.http.HttpStatus;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -36,20 +34,20 @@ public class TourPackageRatingController {
     public String getTourList(Model model){
         List<TourPackageRating> tourPackageRatings = tourPackageRatingService.findAll();
         model.addAttribute("tourPackageRatings",tourPackageRatings);
-        return "fragments/tourPackageRatings";
+        return "tourPackageRatings";
     }
 
     @GetMapping("/tourPackageRating/{tourPackageId}")
     public String getTourById(@PathVariable("tourPackageId") int tourPackageId,Model model){
         List<TourPackageRating> tourPackageRatings = tourPackageRatingService.findAllByTourPackageId(tourPackageId);
         model.addAttribute("tourPackageRatings",tourPackageRatings);
-        return "fragments/tourPackageRatings";
+        return "tourPackageRatings";
     }
 
     @GetMapping("/tourPackageRatingByPerson/{personId}")
     public String getTourByPersonId(@PathVariable("personId") int personId,Model model){
         List<TourPackageRating> tourPackageRatings = tourPackageRatingService.findAllByPersonId(personId);
         model.addAttribute("tourPackageRatings",tourPackageRatings);
-        return "fragments/tourPackageRatings";
+        return "tourPackageRatings";
     }
 }
