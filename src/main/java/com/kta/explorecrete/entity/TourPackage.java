@@ -11,6 +11,7 @@ public class TourPackage {
     private int id;
     @Column(length = 140)
     private String name;
+    private String image;
 
     public TourPackage() {
     }
@@ -31,5 +32,11 @@ public class TourPackage {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 }

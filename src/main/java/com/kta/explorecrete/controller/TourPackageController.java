@@ -24,7 +24,7 @@ public class TourPackageController {
         return new ResponseEntity(tourPackageService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/tourPackage")
+    @GetMapping("/tourPackages")
     public String getPersonList(Model model){
         List<TourPackage> tourPackages = tourPackageService.findAll();
         model.addAttribute("tourPackages",tourPackages);
