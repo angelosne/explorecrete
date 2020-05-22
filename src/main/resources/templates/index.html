@@ -151,8 +151,6 @@
                     <div class="col-lg-4 intro_col" th:each="tourPackage: ${tourPackages}">
                         <div class="intro_item">
                             <div class="intro_item_overlay"></div>
-                            <!-- Image by https://unsplash.com/@dnevozhai -->
-
                             <img th:src="@{/images/{img}.jpg(img=${tourPackage.getImage()})}"
                                  class="intro_item_background">
                             <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
