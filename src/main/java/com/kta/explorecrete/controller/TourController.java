@@ -32,14 +32,14 @@ public class TourController {
         return new ResponseEntity(tourService.findAllByTourPackageId(id), HttpStatus.OK);
     }
 
-    @GetMapping("/tour")
+    @GetMapping("/tours")
     public String getTourList(Model model){
         List<Tour> tours = tourService.findAll();
         model.addAttribute("tours",tours);
         return "tours";
     }
 
-    @GetMapping("/tour/{tourPackageId}")
+    @GetMapping("/tours/{tourPackageId}")
     public String getToursByTourPackageId(@PathVariable int tourPackageId,Model model){
         List<Tour> tours = tourService.findAllByTourPackageId(tourPackageId);
         model.addAttribute("tours",tours);

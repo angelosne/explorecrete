@@ -25,4 +25,9 @@ public class IndexController {
         model.addAttribute("tourPackages", tourPackages);
         return "index";
     }
+
+    @GetMapping("/about")
+    public String about(){
+        return "about";
+    }
 }
