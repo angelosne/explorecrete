@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <title>Tours</title>
-    </head>
-    <body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}" with:title="'Welcome to our page'">
+    <th:block layout:fragment="content">
+        <!-- Home -->
+
+        <div class="home">
+            <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/about_background.jpg"></div>
+            <div class="home_content">
+                <div class="home_title">Εκδρομες</div>
+            </div>
+        </div>
+
         <div>
             <table>
                 <thead>
@@ -36,5 +43,6 @@
                 </tbody>
             </table>
         </div>
-    </body>
+
+    </th:block>
 </html>

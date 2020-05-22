@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Tour Packages</title>
-</head>
-<body>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
+      layout:decorate="~{layout}" with:title="'Welcome to our page'">
+    <th:block layout:fragment="content">
+        <div class="home">
+            <div class="home_background parallax-window" data-parallax="scroll"
+                 data-image-src="images/about_background.jpg"></div>
+            <div class="home_content">
+                <div class="home_title">Πακετα</div>
+            </div>
+        </div>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="tourPackage : ${tourPackages}">
-        <td th:text="${tourPackage.getId()}">id</td>
-        <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tourPackage.getId()})}"
-               th:text="${tourPackage.getName()}">name</a></td>
-    </tr>
-    </tbody>
-</table>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
 
-</body>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="tourPackage : ${tourPackages}">
+                <td th:text="${tourPackage.getId()}">id</td>
+                <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tourPackage.getId()})}"
+                       th:text="${tourPackage.getName()}">name</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+
+    </th:block>
 </html>
