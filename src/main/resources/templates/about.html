@@ -3,13 +3,25 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
-        <!-- Home -->
 
+
+        <!-- Home -->
         <div class="home">
-            <div class="home_background parallax-window" data-parallax="scroll"
-                 data-image-src="images/about_background.jpg"></div>
-            <div class="home_content">
-                <div class="home_title">Σχετικα με εμας</div>
+            <!-- Home Slider -->
+            <div class="home_slider_container">
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <!-- Image by https://unsplash.com/@anikindimitry -->
+                    <div class="home_slider_background"
+                         style="background-image:url(images/about_background.jpg)"></div>
+                    <div class="home_slider_content text-center">
+                        <div class="home_slider_content_inner" data-animation-in="flipInX"
+                             data-animation-out="animate-out fadeOut">
+                            <h1></h1>
+                            <h1>Σχετικα με εμας</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -23,10 +35,23 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="intro_content">
-                            <div class="intro_title">Minotour is your best gateway to exploring Crete without getting lost! </div>
-                            <p class="intro_text"> Established by locals who have vast experience in the travel industry, Minotour, inspired by the mythical Minotaur*, provides the most exciting tour experiences for Crete! Pick your favourite destination among the four municipalities and indulge yourself in the most versatile island in the Mediterranean! From pristine sandy beaches to high mountains, mouth-watering local cuisine, traditions that last centuries and the most hospitable people you can find, Crete scores high on everything and positions in the podium of top-class tourist destinations.
-                                *According to Wikipedia: Minotaur is a mythical creature portrayed in Classical times with the head and tail of a bull and the body of a man or, as described by Roman poet Ovid, a being "part man and part bull". He dwelt at the center of the Labyrinth, which was an elaborate maze-like construction designed by the architect Daedalus and his son Icarus, on the command of King Minos of Crete. The Minotaur was eventually killed by the Athenian hero Theseus.
-                                </p>
+                            <div class="intro_title">Minotour is your best gateway to exploring Crete without getting
+                                lost!
+                            </div>
+                            <p class="intro_text"> Established by locals who have vast experience in the travel
+                                industry, Minotour, inspired by the mythical Minotaur*, provides the most exciting tour
+                                experiences for Crete! Pick your favourite destination among the four municipalities and
+                                indulge yourself in the most versatile island in the Mediterranean! From pristine sandy
+                                beaches to high mountains, mouth-watering local cuisine, traditions that last centuries
+                                and the most hospitable people you can find, Crete scores high on everything and
+                                positions in the podium of top-class tourist destinations.
+                                *According to Wikipedia: Minotaur is a mythical creature portrayed in Classical times
+                                with the head and tail of a bull and the body of a man or, as described by Roman poet
+                                Ovid, a being "part man and part bull". He dwelt at the center of the Labyrinth, which
+                                was an elaborate maze-like construction designed by the architect Daedalus and his son
+                                Icarus, on the command of King Minos of Crete. The Minotaur was eventually killed by the
+                                Athenian hero Theseus.
+                            </p>
                         </div>
                     </div>
                 </div>

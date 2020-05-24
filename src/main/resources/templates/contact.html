@@ -16,29 +16,14 @@
                         <div class="home_slider_content_inner" data-animation-in="flipInX"
                              data-animation-out="animate-out fadeOut">
                             <h1></h1>
-                            <h1>Πακέτα εκδρομών</h1>
+                            <h1>Επικοινωνία</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
 
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="tourPackage : ${tourPackages}">
-                <td th:text="${tourPackage.getId()}">id</td>
-                <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tourPackage.getId()})}"
-                       th:text="${tourPackage.getName()}">name</a></td>
-            </tr>
-            </tbody>
-        </table>
 
 
     </th:block>
