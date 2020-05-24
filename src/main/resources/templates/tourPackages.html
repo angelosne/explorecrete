@@ -23,6 +23,58 @@
             </div>
         </div>
 
+
+        <!-- Intro εδώ θα μπουν τα tour packages-->
+
+        <div class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="intro_title text-center">We have the best tour packages</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="intro_text text-center">
+                            <p>Visit Crete, the biggest island of Greece. We have tours for every type of traveller </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row intro_items">
+
+                    <!-- Intro Item -->
+
+                    <div class="col-lg-4 intro_col" th:each="tourPackage: ${tourPackages}">
+                        <div class="intro_item">
+                            <div class="intro_item_overlay"></div>
+                            <img th:src="@{/images/{img}.jpg(img=${tourPackage.getImage()})}"
+                                 class="intro_item_background">
+                            <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
+                                <div class="button intro_button">
+                                    <div class="button_bcg"></div>
+                                    <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">Πληροφοριες</a>
+                                </div>
+                                <div class="intro_center text-center">
+                                    <h1 th:text="${tourPackage.getName()}">Tour Package Name</h1>
+                                    <div class="intro_price" th:text="${tourPackage.getId()}+'€'">Price</div>
+                                    <div class="rating rating_4">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
         <table>
             <thead>
             <tr>

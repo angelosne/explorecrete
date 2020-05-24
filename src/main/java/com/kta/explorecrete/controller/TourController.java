@@ -39,19 +39,15 @@ public class TourController {
         return "tours";
     }
 
-    @GetMapping("/tours/{tourPackageId}")
-    public String getToursByTourPackageId(@PathVariable int tourPackageId,Model model){
-        List<Tour> tours = tourService.findAllByTourPackageId(tourPackageId);
-        model.addAttribute("tours",tours);
-        return "tours";
-    }
-
-    @GetMapping("/tournumber/{tourId}")
-    public String getTourById(@PathVariable int tourId,Model model){
+    @GetMapping("/tours/{tourId}")
+    public String getToursByTourPackageId(@PathVariable int tourId,Model model){
         Optional<Tour> tour = tourService.findById(tourId);
         model.addAttribute("tour",tour);
+
         return "tour";
     }
+
+
 
 
 
