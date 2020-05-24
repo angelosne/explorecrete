@@ -1447,7 +1447,7 @@ section
 	left: 0;
 	bottom: 27px;
 	width: 180px;
-	height: 33px;
+	height: auto;
 	background: #fa9e1b;
 	overflow: hidden;
 }
@@ -1457,7 +1457,7 @@ section
 	font-size: 16px;
 	font-weight: 700;
 	color: #FFFFFF;
-	text-transform: uppercase;
+	text-transform: none;
 	line-height: 35px;
 	padding-left: 22px;
 }
