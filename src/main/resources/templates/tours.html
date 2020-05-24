@@ -94,7 +94,7 @@
                             <div class="offers_image_container">
                                 <!-- Image by https://unsplash.com/@kensuarez -->
                                 <div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
-                                <div class="offer_name"><a href="single_listing.html" th:text="${tour.getTitle()}">grand castle</a></div>
+                                <div class="offer_name"><a th:href="@{/tours/{tourId}(tourId=${tour.getId()})}" th:text="${tour.getTitle()}">TITLE</a></div>
                             </div>
                         </div>
                         <div class="col-lg-8">
