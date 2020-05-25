@@ -1,6 +1,10 @@
 package com.kta.explorecrete.controller;
 
+import com.kta.explorecrete.entity.Person;
 import com.kta.explorecrete.entity.TourPackage;
+import com.kta.explorecrete.entity.TourPackageRating;
+import com.kta.explorecrete.service.PersonService;
+import com.kta.explorecrete.service.TourPackageRatingService;
 import com.kta.explorecrete.service.TourPackageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,19 +16,26 @@ import java.util.List;
 public class IndexController {
 
     TourPackageService tourPackageService;
+    TourPackageRatingService tourPackageRatingService;
+    PersonService personService;
 
-    public IndexController(TourPackageService tourPackageService) {
+    public IndexController(TourPackageService tourPackageService, TourPackageRatingService tourPackageRatingService, PersonService personService) {
         this.tourPackageService = tourPackageService;
+        this.tourPackageRatingService = tourPackageRatingService;
+        this.personService = personService;
     }
 
     @GetMapping("/")
     public String welcome(Model model) {
-        model.addAttribute("welcomeMessage", "Καλώς ορίσατε στο KTA Tours™");
-        model.addAttribute("chooseDestination", "Επιλέξτε κάποιον από τους προορισμούς μας:");
         List<TourPackage> tourPackages = tourPackageService.findAll();
         model.addAttribute("tourPackages", tourPackages);
+        TourPackageRating newRating = new TourPackageRating();
+        model.addAttribute("newRating", newRating);
+        List<Person> persons = personService.findAll();
+        model.addAttribute("persons", persons);
         return "index";
     }
+
 
     @GetMapping("/about")
     public String about(){

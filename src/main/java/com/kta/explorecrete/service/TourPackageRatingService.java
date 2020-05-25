@@ -7,7 +7,11 @@ import java.util.List;
 
 public interface TourPackageRatingService {
     List<TourPackageRating> findAll();
+
     List<TourPackageRating> findAllByTourPackageId(int id);
+
     List<TourPackageRating> findAllByPersonId(int id);
+
+    Void saveTourPackageRating(TourPackageRating tourPackageRating);
 
 }

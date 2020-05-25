@@ -14,7 +14,6 @@ public class TourPackageRatingServiceImpl implements TourPackageRatingService {
         this.tourPackageRatingRepository = tourPackageRatingRepository;
     }
 
-
     @Override
     public List<TourPackageRating> findAll() {
         return tourPackageRatingRepository.findAll();
@@ -28,5 +27,11 @@ public class TourPackageRatingServiceImpl implements TourPackageRatingService {
     @Override
     public List<TourPackageRating> findAllByPersonId(int id) {
         return tourPackageRatingRepository.findAllByPersonId(id);
+    }
+
+    @Override
+    public Void saveTourPackageRating(TourPackageRating tourPackageRating) {
+        tourPackageRatingRepository.save(tourPackageRating);
+        return null;
     }
 }
