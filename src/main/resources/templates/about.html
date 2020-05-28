@@ -4,54 +4,65 @@
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
 
-
-        <!-- Home -->
-        <div class="home">
-            <!-- Home Slider -->
-            <div class="home_slider_container">
-                <!-- Slider Item -->
-                <div class="owl-item home_slider_item">
-                    <!-- Image by https://unsplash.com/@anikindimitry -->
-                    <div class="home_slider_background"
-                         style="background-image:url(images/about_background.jpg)"></div>
-                    <div class="home_slider_content text-center">
-                        <div class="home_slider_content_inner" data-animation-in="flipInX"
-                             data-animation-out="animate-out fadeOut">
-                            <h1></h1>
-                            <h1>Σχετικα με εμας</h1>
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(images/cover-img-5.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>by colorlib.com</h2>
+                                        <h1>About us</h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </aside>
 
-        <!-- Intro -->
-
-        <div class="intro">
+        <div id="colorlib-about">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7">
-                        <div class="intro_image"><img src="images/intro.png" alt=""></div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="intro_content">
-                            <div class="intro_title">Minotour is your best gateway to exploring Crete without getting
-                                lost!
+                    <div class="about-flex">
+                        <div class="col-one-forth aside-stretch animate-box">
+                            <div class="row">
+                                <div class="col-md-12 about">
+                                    <h2>About</h2>
+                                </div>
                             </div>
-                            <p class="intro_text"> Established by locals who have vast experience in the travel
-                                industry, Minotour, inspired by the mythical Minotaur*, provides the most exciting tour
-                                experiences for Crete! Pick your favourite destination among the four municipalities and
-                                indulge yourself in the most versatile island in the Mediterranean! From pristine sandy
-                                beaches to high mountains, mouth-watering local cuisine, traditions that last centuries
-                                and the most hospitable people you can find, Crete scores high on everything and
-                                positions in the podium of top-class tourist destinations.
-                                *According to Wikipedia: Minotaur is a mythical creature portrayed in Classical times
-                                with the head and tail of a bull and the body of a man or, as described by Roman poet
-                                Ovid, a being "part man and part bull". He dwelt at the center of the Labyrinth, which
-                                was an elaborate maze-like construction designed by the architect Daedalus and his son
-                                Icarus, on the command of King Minos of Crete. The Minotaur was eventually killed by the
-                                Athenian hero Theseus.
-                            </p>
+                        </div>
+                        <div class="col-three-forth animate-box">
+                            <h2>History</h2>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Established by locals who have vast experience in the travel
+                                        industry, Minotour, inspired by the mythical Minotaur*, provides the most
+                                        exciting tour
+                                        experiences for Crete! Pick your favourite destination among the four
+                                        municipalities and
+                                        indulge yourself in the most versatile island in the Mediterranean! From
+                                        pristine sandy
+                                        beaches to high mountains, mouth-watering local cuisine, traditions that last
+                                        centuries
+                                        and the most hospitable people you can find, Crete scores high on everything and
+                                        positions in the podium of top-class tourist destinations.
+                                        *According to Wikipedia: Minotaur is a mythical creature portrayed in Classical
+                                        times
+                                        with the head and tail of a bull and the body of a man or, as described by Roman
+                                        poet
+                                        Ovid, a being "part man and part bull". He dwelt at the center of the Labyrinth,
+                                        which
+                                        was an elaborate maze-like construction designed by the architect Daedalus and
+                                        his son
+                                        Icarus, on the command of King Minos of Crete. The Minotaur was eventually
+                                        killed by the
+                                        Athenian hero Theseus.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

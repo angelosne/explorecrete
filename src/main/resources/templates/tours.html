@@ -3,169 +3,90 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
-        <!-- Home -->
 
-        <div class="home">
-            <!-- Home Slider -->
-            <div class="home_slider_container">
-                <!-- Slider Item -->
-                <div class="owl-item home_slider_item">
-                    <!-- Image by https://unsplash.com/@anikindimitry -->
-                    <div class="home_slider_background"
-                         style="background-image:url(images/blog_background.jpg)"></div>
-                    <div class="home_slider_content text-center">
-                        <div class="home_slider_content_inner" data-animation-in="flipInX"
-                             data-animation-out="animate-out fadeOut">
-                            <h1></h1>
-                            <h1>Εκδρομές</h1>
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(/images/img_bg_3.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>by colorlib.com</h2>
+                                        <h1>Find Tours</h1>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </aside>
 
-
-        <!-- Offers -->
-
-        <div class="offers">
+        <!--List of tours-->
+        <div class="colorlib-wrap">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center">
-                        <h2 class="section_title">Οι καλύτερες εκδρομές στην Κρήτη</h2>
-                    </div>
-                </div>
-                <div class="row offers_items">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="wrap-division">
+                                <div class="col-md-6 col-sm-6 animate-box" th:each="tour : ${tours}">
+                                    <div class="tour">
+                                        <a class="tour-img" style="background-image: url(/images/tour-1.jpg);"
+                                           th:href="@{/tours/{tourId}(tourId=${tour.getId()})}">
+                                            <p class="price">
+                                                <span th:text="${tour.getPrice()+ '€ /'}">PRICE</span>
+                                                <small th:text="${tour.getDuration()+ ' Hours'}">DURATION</small>
+                                            </p>
+                                        </a>
+                                        <span class="desc">
+											<h2><a href="tour-place.html" th:text="${tour.getTitle()}">TITLE</a></h2>
+											<span class="city">
+                                                <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
+                                                   th:text="${tour.getTourPackage().getName()}">TOURPACKAGE</a>
+                                            </span>
+										</span>
+                                    </div>
+                                </div>
 
-                    <!-- Offers Item -->
-                    <div class="col-lg-6 offers_col" th:each="tour : ${tours}">
-                        <div class="offers_item">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="offers_image_container">
-                                        <!-- Image by https://unsplash.com/@kensuarez -->
-                                        <div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
-                                        <div class="offer_name"><a th:href="@{/tours/{tourId}(tourId=${tour.getId()})}" th:text="${tour.getTitle()}">TITLE</a></div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="offers_content">
-                                        <div class="offers_price" th:text="${tour.getPrice()+ '€'}">PRICE<span>per night</span></div>
-                                        <div class="rating_r rating_r_4 offers_rating">
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                            <i></i>
-                                        </div>
-                                        <p class="offers_text" th:text="${tour.getDescription()}">DESCRIPTION</p>
-                                        <div class="offers_icons">
-                                            <ul class="offers_icons_list">
-                                                <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                                                <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                                                <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                                                <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                                            </ul>
-                                        </div>
-                                        <div class="offers_link"><a th:href="@{/tours/{tourId}(tourId=${tour.getId()})}">read more</a></div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-        </div>
-
-
-
-        <div class="col-lg-12">
-            <!-- Offers Grid -->
-
-            <div class="offers_grid">
-
-                <!-- Offers Item -->
-
-                <div class="offers_item rating_4" th:each="tour : ${tours}">
-                    <div class="row">
-                        <div class="col-lg-1 temp_col"></div>
-                        <div class="col-lg-3 col-1680-4">
-                            <div class="offers_image_container">
-                                <!-- Image by https://unsplash.com/@kensuarez -->
-                                <div class="offers_image_background" style="background-image:url(images/offer_1.jpg)"></div>
-                                <div class="offer_name"><a th:href="@{/tours/{tourId}(tourId=${tour.getId()})}" th:text="${tour.getTitle()}">TITLE</a></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="offers_content">
-                                <div class="offers_price" th:text="${tour.getPrice()+ '€'}">PRICE</div>
-                                <div class="rating_r rating_r_4 offers_rating" data-rating="4">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </div>
-                                <p class="offers_text" th:text="${tour.getDescription()}"> DESCRIPTION</p>
-                                <div class="offers_icons">
-                                    <ul class="offers_icons_list">
-                                        <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                                        <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                                    </ul>
-                                </div>
-                                <div class="button book_button"><a th:href="@{/tours/{tourId}(tourId=${tour.getId()})}">Περισσότερες πληροφορίες<span></span><span></span><span></span></a></div>
-                                <div class="offer_reviews">
-                                    <div class="offer_reviews_content">
-                                        <div class="offer_reviews_title">very good</div>
-                                        <div class="offer_reviews_subtitle">100 reviews</div>
-                                    </div>
-                                    <div class="offer_reviews_rating text-center">8.1</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-
-
-        <div>
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Duration</th>
-                    <th>Keywords</th>
-                    <th>Region</th>
-                    <th>TourPackage</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="tour : ${tours}">
-                    <td th:text="${tour.getId()}">id</td>
-                    <td><a th:href="@{/tournumber/{tourId}(tourId=${tour.getId()})}"
-                           th:text="${tour.getTitle()}">title</a></td>
-                    <td th:text="${tour.getDescription()}">description</td>
-                    <td th:text="${tour.getPrice()}">price</td>
-                    <td th:text="${tour.getDuration()}">duration</td>
-                    <td th:text="${tour.getKeywords()}">keywords</td>
-                    <td th:text="${tour.getRegion()}">region</td>
-                    <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
-                           th:text="${tour.getTourPackage().getName()}">name</a></td>
-                </tr>
-                </tbody>
-            </table>
         </div>
 
     </th:block>
 </html>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Duration</th>
+            <th>Keywords</th>
+            <th>Region</th>
+            <th>TourPackage</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tour : ${tours}">
+            <td th:text="${tour.getId()}">id</td>
+            <td><a th:href="@{/tournumber/{tourId}(tourId=${tour.getId()})}"
+                   th:text="${tour.getTitle()}">title</a></td>
+            <td th:text="${tour.getDescription()}">description</td>
+            <td th:text="${tour.getPrice()}">price</td>
+            <td th:text="${tour.getDuration()}">duration</td>
+            <td th:text="${tour.getKeywords()}">keywords</td>
+            <td th:text="${tour.getRegion()}">region</td>
+            <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
+                   th:text="${tour.getTourPackage().getName()}">name</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -3,95 +3,51 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
-        <!-- Home -->
-        <div class="home">
-            <!-- Home Slider -->
-            <div class="home_slider_container">
-                <!-- Slider Item -->
-                <div class="owl-item home_slider_item">
-                    <!-- Image by https://unsplash.com/@anikindimitry -->
-                    <div class="home_slider_background"
-                         style="background-image:url(images/blog_background.jpg)"></div>
-                    <div class="home_slider_content text-center">
-                        <div class="home_slider_content_inner" data-animation-in="flipInX"
-                             data-animation-out="animate-out fadeOut">
-                            <h1></h1>
-                            <h1>Πακέτα εκδρομών</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-
-        <!-- Intro εδώ θα μπουν τα tour packages-->
-
-        <div class="intro">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="intro_title text-center">We have the best tour packages</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="intro_text text-center">
-                            <p>Visit Crete, the biggest island of Greece. We have tours for every type of traveller </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row intro_items">
-
-                    <!-- Intro Item -->
-
-                    <div class="col-lg-4 intro_col" th:each="tourPackage: ${tourPackages}">
-                        <div class="intro_item">
-                            <div class="intro_item_overlay"></div>
-                            <img th:src="@{/images/{img}.jpg(img=${tourPackage.getImage()})}"
-                                 class="intro_item_background">
-                            <div class="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                                <div class="button intro_button">
-                                    <div class="button_bcg"></div>
-                                    <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">Πληροφοριες</a>
-                                </div>
-                                <div class="intro_center text-center">
-                                    <h1 th:text="${tourPackage.getName()}">Tour Package Name</h1>
-                                    <div class="intro_price" th:text="${tourPackage.getId()}+'€'">Price</div>
-                                    <div class="rating rating_4">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(images/cover-img-4.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>Minotour</h2>
+                                        <h1>Packages</h1>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="colorlib-tour colorlib-light-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                        <h2>Popular Destination</h2>
+                        <p>We love to tell our successful far far away, behind the word mountains, far from the
+                            countries Vokalia and Consonantia, there live the blind texts.</p>
                     </div>
-
-
                 </div>
             </div>
+            <div class="tour-wrap">
+                <a class="tour-entry animate-box" th:each="tourPackage: ${tourPackages}"
+                   th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">
+                    <div class="tour-img" style="background-image: url(images/tour-1.jpg);">
+                    </div>
+                    <span class="desc">
+						<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i
+                                class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Reviews</p>
+						<h2 th:text="${tourPackage.getName()}">NAME</h2>
+						<span class="city">Crete, Greece</span>
+						<span class="price" th:text="${tourPackage.getId()}+'€'">PRICE</span>
+					</span>
+                </a>
+            </div>
         </div>
-
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="tourPackage : ${tourPackages}">
-                <td th:text="${tourPackage.getId()}">id</td>
-                <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tourPackage.getId()})}"
-                       th:text="${tourPackage.getName()}">name</a></td>
-            </tr>
-            </tbody>
-        </table>
-
-
     </th:block>
 </html>
+

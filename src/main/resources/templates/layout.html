@@ -2,14 +2,19 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <th:block layout:insert="~{fragments/htmlHead}"/>
     <body>
-        <th:block layout:replace="~{fragments/topNavBar}"/>
+        <div class="colorlib-loader"></div>
+        <div id="page">
+            <th:block layout:replace="~{fragments/topNavBar}"/>
 
-        <th:block layout:fragment="content"/>
+            <th:block layout:fragment="content"/>
 
-        <th:block layout:replace="~{fragments/footer}"/>
+            <th:block layout:replace="~{fragments/footer}"/>
 
-        <th:block layout:replace="~{fragments/copyright}"/>
-
+            <th:block layout:replace="~{fragments/copyright}"/>
+        </div>
+        <div class="gototop js-top">
+            <a class="js-gotop" href="#"><i class="icon-arrow-up2"></i></a>
+        </div>
         <th:block layout:replace="~{fragments/jsScripts}"/>
     </body>
 </html>

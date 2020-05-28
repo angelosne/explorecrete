@@ -1,14 +1,55 @@
 <head xmlns:th="http://www.thymeleaf.org">
-    <meta charset="UTF-8">
-    <title th:text="${title}">Head</title>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Minotour">
+    <title th:text="${title}">Tour Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap4/bootstrap.min.css}">
-    <link th:href="@{/plugins/font-awesome-4.7.0/css/font-awesome.min.css}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/main_styles.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/styles/responsive.css}">
+    <meta content="Minotour" name="description"/>
+    <meta content="" name="keywords"/>
+    <meta content="" name="author"/>
+
+    <!-- Facebook and Twitter integration -->
+    <meta content="" property="og:title"/>
+    <meta content="" property="og:image"/>
+    <meta content="" property="og:url"/>
+    <meta content="" property="og:site_name"/>
+    <meta content="" property="og:description"/>
+    <meta content="" name="twitter:title"/>
+    <meta content="" name="twitter:image"/>
+    <meta content="" name="twitter:url"/>
+    <meta content="" name="twitter:card"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" th:href="@{/css/animate.css}">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" th:href="@{/css/icomoon.css}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" th:href="@{/css/flexslider.css}">
+
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/css/owl.theme.default.min.css}">
+
+    <!-- Date Picker -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap-datepicker.css}">
+    <!-- Flaticons  -->
+    <link rel="stylesheet" th:href="@{/fonts/flaticon/font/flaticon.css}">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <!-- Modernizr JS -->
+    <script th:src="@{/js/modernizr-2.6.2.min.js}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script th:src="@{/js/respond.min.js}"></script>
+    <![endif]-->
+
 </head>

@@ -3,32 +3,51 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
-        <!-- Home -->
-        <div class="home">
-            <!-- Home Slider -->
-            <div class="home_slider_container">
-                <!-- Slider Item -->
-                <div class="owl-item home_slider_item">
-                    <!-- Image by https://unsplash.com/@anikindimitry -->
-                    <div class="home_slider_background"
-                         style="background-image:url(images/contact_background.jpg)"></div>
-                    <div class="home_slider_content text-center">
-                        <div class="home_slider_content_inner" data-animation-in="flipInX"
-                             data-animation-out="animate-out fadeOut">
-                            <h1></h1>
-                            <h1>Επικοινωνία</h1>
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(images/cover-img-3.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>by colorlib.com</h2>
+                                        <h1>Contact us</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div id="colorlib-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 animate-box">
+                        <h3>Contact Information</h3>
+                        <div class="row contact-info-wrap">
+                            <div class="col-md-3">
+                                <p><span><i class="icon-location"></i></span> Dimokratias 10 Av, <br> Irakleio Kriti</p>
+                            </div>
+                            <div class="col-md-3">
+                                <p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+30 2810
+                                    258965</a></p>
+                            </div>
+                            <div class="col-md-3">
+                                <p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@minotour.gr</a>
+                                </p>
+                            </div>
+                            <div class="col-md-3">
+                                <p><span><i class="icon-globe"></i></span> <a href="#">www.minotour.gr</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3448.450860990196!2d25.136002656802166!3d35.3332012621777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x149a5a2a7cd09885%3A0xabe6d00246b5b258!2zzpvOtc-Jz4YuIM6UzrfOvM6_zrrPgc6xz4TOr86xz4IgMTAsIM6Xz4HOrM66zrvOtc65zr8gNzEzIDA2!5e0!3m2!1sel!2sgr!4v1590356767051!5m2!1sel!2sgr"
-                width="800" height="600" frameborder="0" style="margin: auto; display:block;" allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0"></iframe>
-
 
     </th:block>
 </html>
