@@ -41,7 +41,8 @@
                                             </p>
                                         </a>
                                         <span class="desc">
-											<h2><a href="tour-place.html" th:text="${tour.getTitle()}">TITLE</a></h2>
+											<h2><a th:href="@{/tours/{tourId}(tourId=${tour.getId()})}"
+                                                   th:text="${tour.getTitle()}">TITLE</a></h2>
 											<span class="city">
                                                 <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
                                                    th:text="${tour.getTourPackage().getName()}">TOURPACKAGE</a>
@@ -59,34 +60,3 @@
 
     </th:block>
 </html>
-<div>
-    <table>
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Duration</th>
-            <th>Keywords</th>
-            <th>Region</th>
-            <th>TourPackage</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="tour : ${tours}">
-            <td th:text="${tour.getId()}">id</td>
-            <td><a th:href="@{/tournumber/{tourId}(tourId=${tour.getId()})}"
-                   th:text="${tour.getTitle()}">title</a></td>
-            <td th:text="${tour.getDescription()}">description</td>
-            <td th:text="${tour.getPrice()}">price</td>
-            <td th:text="${tour.getDuration()}">duration</td>
-            <td th:text="${tour.getKeywords()}">keywords</td>
-            <td th:text="${tour.getRegion()}">region</td>
-            <td><a th:href="@{/tour/{tourPackageId}(tourPackageId=${tour.getTourPackage().getId()})}"
-                   th:text="${tour.getTourPackage().getName()}">name</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
