@@ -2440,11 +2440,6 @@ input[type="text"] {
     outline: none !important;
 }
 
-.btn-primary {
-    background: #FFDD00;
-    color: #fff;
-    border: 1px solid #FFDD00;
-}
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background: #ffe01a !important;

@@ -3,49 +3,103 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
-        <!-- Home -->
-        <div class="home">
-            <!-- Home Slider -->
-            <div class="home_slider_container">
-                <!-- Slider Item -->
-                <div class="owl-item home_slider_item">
-                    <!-- Image by https://unsplash.com/@anikindimitry -->
-                    <div class="home_slider_background"
-                         style="background-image:url(images/contact_background.jpg)"></div>
-                    <div class="home_slider_content text-center">
-                        <div class="home_slider_content_inner" data-animation-in="flipInX"
-                             data-animation-out="animate-out fadeOut">
-                            <h1></h1>
-                            <h1>Αξιολογήσεις</h1>
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(/images/cover-img-3.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>Minotour</h2>
+                                        <h1>Ratings</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div class="colorlib-light-grey" id="colorlib-testimony">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                        <h2>Our Satisfied Guests says</h2>
+                        <p>We love to tell our successful far far away, behind the word mountains, far from the
+                            countries Vokalia and Consonantia, there live the blind texts.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 animate-box">
+                        <div class="owl-carousel2">
+                            <div class="item" th:each="tourPackageRating : ${tourPackageRatings}">
+                                <div class="testimony text-center">
+                                    <span class="user"
+                                          th:text="${tourPackageRating.getTourPackage().getName()}">PACKAGE</span>
+                                    <small th:text="${tourPackageRating.getPerson().getName()}">PERSON</small>
+                                    <blockquote>
+                                        <p th:text="${tourPackageRating.getComments()}">COMMENTS</p>
+                                        <button class="btn btn-primary" type="button">
+                                            Score <span class="badge"
+                                                        th:text="${tourPackageRating.getScore()}">SCORE</span>
+                                        </button>
+                                    </blockquote>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <table>
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tour Package</th>
-                <th>Person</th>
-                <th>Score</th>
-                <th>Comments</th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="tourPackageRating : ${tourPackageRatings}">
-                <td th:text="${tourPackageRating.getId()}">id</td>
-                <td>
-                    <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackageRating.getTourPackage().getId()})}"
-                       th:text="${tourPackageRating.getTourPackage().getName()}">name</a></td>
-                <td th:text="${tourPackageRating.getPerson().getName()}">Person</td>
-                <td th:text="${tourPackageRating.getScore()}">Score</td>
-                <td th:text="${tourPackageRating.getComments()}">Comments</td>
-            </tr>
-            </tbody>
-        </table>
-
     </th:block>
 </html>
+
+
+<!-- Home -->
+<div class="home">
+    <!-- Home Slider -->
+    <div class="home_slider_container">
+        <!-- Slider Item -->
+        <div class="owl-item home_slider_item">
+            <!-- Image by https://unsplash.com/@anikindimitry -->
+            <div class="home_slider_background"
+                 style="background-image:url(images/contact_background.jpg)"></div>
+            <div class="home_slider_content text-center">
+                <div class="home_slider_content_inner" data-animation-in="flipInX"
+                     data-animation-out="animate-out fadeOut">
+                    <h1></h1>
+                    <h1>Αξιολογήσεις</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tour Package</th>
+        <th>Person</th>
+        <th>Score</th>
+        <th>Comments</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tourPackageRating : ${tourPackageRatings}">
+        <td th:text="${tourPackageRating.getId()}">id</td>
+        <td>
+            <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackageRating.getTourPackage().getId()})}"
+               th:text="${tourPackageRating.getTourPackage().getName()}">name</a></td>
+        <td th:text="${tourPackageRating.getPerson().getName()}">Person</td>
+        <td th:text="${tourPackageRating.getScore()}">Score</td>
+        <td th:text="${tourPackageRating.getComments()}">Comments</td>
+    </tr>
+    </tbody>
+</table>
