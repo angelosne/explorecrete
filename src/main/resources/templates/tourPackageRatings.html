@@ -3,6 +3,7 @@
       xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout}" with:title="'Welcome to our page'">
     <th:block layout:fragment="content">
+
         <aside id="colorlib-hero">
             <div class="flexslider">
                 <ul class="slides">
@@ -22,6 +23,7 @@
                 </ul>
             </div>
         </aside>
+
         <div class="colorlib-light-grey" id="colorlib-testimony">
             <div class="container">
                 <div class="row">
@@ -48,8 +50,6 @@
                                     </blockquote>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -58,48 +58,3 @@
 
     </th:block>
 </html>
-
-
-<!-- Home -->
-<div class="home">
-    <!-- Home Slider -->
-    <div class="home_slider_container">
-        <!-- Slider Item -->
-        <div class="owl-item home_slider_item">
-            <!-- Image by https://unsplash.com/@anikindimitry -->
-            <div class="home_slider_background"
-                 style="background-image:url(images/contact_background.jpg)"></div>
-            <div class="home_slider_content text-center">
-                <div class="home_slider_content_inner" data-animation-in="flipInX"
-                     data-animation-out="animate-out fadeOut">
-                    <h1></h1>
-                    <h1>Αξιολογήσεις</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Tour Package</th>
-        <th>Person</th>
-        <th>Score</th>
-        <th>Comments</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="tourPackageRating : ${tourPackageRatings}">
-        <td th:text="${tourPackageRating.getId()}">id</td>
-        <td>
-            <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackageRating.getTourPackage().getId()})}"
-               th:text="${tourPackageRating.getTourPackage().getName()}">name</a></td>
-        <td th:text="${tourPackageRating.getPerson().getName()}">Person</td>
-        <td th:text="${tourPackageRating.getScore()}">Score</td>
-        <td th:text="${tourPackageRating.getComments()}">Comments</td>
-    </tr>
-    </tbody>
-</table>
