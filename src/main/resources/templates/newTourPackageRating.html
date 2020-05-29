@@ -1,0 +1,84 @@
+<html lang="en" layout:decorate="~{layout}"
+      with:title="'Welcome to our page'"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org" xmlns:with="http://www.thymeleaf.org/extras/with">
+    <th:block layout:fragment="content">
+        <aside id="colorlib-hero">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url(images/cover-img-3.jpg);">
+                        <div class="overlay"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h2>Minotour</h2>
+                                        <h1>Rate us</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div id="colorlib-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1 animate-box">
+                        <h3>Rate us</h3>
+                        <form method="post" th:action="@{/newRating}" th:object="${newRating}">
+                            <div class="row form-group">
+                                <div class="col-md-6 padding-bottom">
+                                    <label for="package">Package</label>
+                                    <select class="form-control" id="package" th:field="*{tourPackage}" type="text">
+                                        <option th:each="tourPackage: ${tourPackages}"
+                                                th:text="${tourPackage.getName()}"
+                                                th:value="${tourPackage.getId()}">
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="person">Person</label>
+                                    <select class="form-control" id="person" th:field="*{person}" type="text">
+                                        <option th:each="person: ${persons}" th:text="${person.getName()}"
+                                                th:value="${person.getId()}">
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="score">Score</label>
+                                    <select class="form-control" id="score" th:field="*{score}" type="text">
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                        <option value=5>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label for="message">Message</label>
+                                    <textarea class="form-control" cols="30" id="message" name="message"
+                                              placeholder="Say something about us" rows="10"
+                                              th:field="*{comments}"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <input class="btn btn-primary" type="submit" value="Send Message">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </th:block>
+</html>

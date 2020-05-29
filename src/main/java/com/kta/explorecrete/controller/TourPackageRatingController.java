@@ -1,7 +1,11 @@
 package com.kta.explorecrete.controller;
 
+import com.kta.explorecrete.entity.Person;
+import com.kta.explorecrete.entity.TourPackage;
 import com.kta.explorecrete.entity.TourPackageRating;
+import com.kta.explorecrete.service.PersonService;
 import com.kta.explorecrete.service.TourPackageRatingService;
+import com.kta.explorecrete.service.TourPackageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,9 +22,13 @@ import java.util.List;
 public class TourPackageRatingController {
 
     private final TourPackageRatingService tourPackageRatingService;
+    private final PersonService personService;
+    private final TourPackageService tourPackageService;
 
-    public TourPackageRatingController(TourPackageRatingService tourPackageRatingService) {
+    public TourPackageRatingController(TourPackageRatingService tourPackageRatingService, PersonService personService, TourPackageService tourPackageService) {
         this.tourPackageRatingService = tourPackageRatingService;
+        this.personService = personService;
+        this.tourPackageService = tourPackageService;
     }
 
     @GetMapping("api/ratings")
@@ -54,13 +62,20 @@ public class TourPackageRatingController {
         return "tourPackageRatings";
     }
 
-    @PostMapping("/")
+    @PostMapping("/newRating")
     public String saveNewRating(@ModelAttribute("newRating") TourPackageRating rating, BindingResult result, Model model) {
-        System.out.println("Saving the new rating from user " + rating.getPerson().getName());
-        System.out.println("for package " + rating.getTourPackage().getName());
-        System.out.println("with score " + rating.getScore());
-        System.out.println("who commented it " + rating.getComments());
         tourPackageRatingService.saveTourPackageRating(rating);
-        return "redirect:/";
+        return "redirect:/tourPackageRating";
+    }
+
+    @GetMapping("/newRating")
+    public String newRating(Model model) {
+        TourPackageRating newRating = new TourPackageRating();
+        model.addAttribute("newRating", newRating);
+        List<Person> persons = personService.findAll();
+        model.addAttribute("persons", persons);
+        List<TourPackage> tourPackages = tourPackageService.findAll();
+        model.addAttribute("tourPackages", tourPackages);
+        return "newTourPackageRating";
     }
 }
