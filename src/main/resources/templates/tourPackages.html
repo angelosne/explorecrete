@@ -24,41 +24,7 @@
             </div>
         </aside>
 
-        <div class="colorlib-tour colorlib-light-grey">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
-                        <h2>Popular Destination</h2>
-                        <p>We love to tell our successful far far away, behind the word mountains, far from the
-                            countries Vokalia and Consonantia, there live the blind texts.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tour-wrap">
-                <div class="tour-entry animate-box" th:each="tourPackage: ${tourPackages}">
-                    <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">
-                        <div class="tour-img" style="background-image: url(images/tour-1.jpg);">
-                        </div>
-                    </a>
-                    <span class="desc">
-                        <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">
-						<p class="star"><span>
-                            <i class="icon-star-full"></i>
-                            <i class="icon-star-full"></i>
-                            <i class="icon-star-full"></i>
-                            <i class="icon-star-full"></i>
-                            <i class="icon-star-full"></i>
-                        </span> 545 Reviews</p>
-                        </a>
-                        <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">
-						<h2 th:text="${tourPackage.getName()}">NAME</h2>
-                        </a>
-						<span class="city">Crete, Greece</span>
-						<span class="price" th:text="${tourPackage.getId()}+'€'">PRICE</span>
-					</span>
-                </div>
-            </div>
-        </div>
+        <th:block layout:insert="~{fragments/tourPackageList}"/>
 
     </th:block>
 </html>
