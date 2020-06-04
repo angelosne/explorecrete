@@ -33,8 +33,10 @@
                             <div class="wrap-division">
                                 <div class="col-md-6 col-sm-6 animate-box" th:each="tour : ${tours}">
                                     <div class="tour">
-                                        <a class="tour-img" style="background-image: url(/images/moni-arkadiou.jpg);"
+                                        <a class="tour-img"
                                            th:href="@{/tours/{tourId}(tourId=${tour.getId()})}">
+                                            <img class="tour-img"
+                                                 th:src="@{/images/{image}.jpg(image=${tour.getImage()})}">
                                             <p class="price">
                                                 <span th:text="${tour.getPrice()+ '€ /'}">PRICE</span>
                                                 <small th:text="${tour.getDuration()+ ' Hours'}">DURATION</small>
