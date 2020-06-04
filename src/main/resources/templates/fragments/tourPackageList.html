@@ -11,8 +11,8 @@
     <div class="tour-wrap">
         <div class="tour-entry animate-box" th:each="tourPackage: ${tourPackages}">
             <a th:href="@{/tourPackages/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">
-                <div class="tour-img" style="background-image: url(images/tour-1.jpg);">
-                </div>
+                <img class="tour-img"
+                     th:src="@{/images/{image}.jpg(image=${tourPackage.getImage()})}">
             </a>
             <span class="desc">
                         <a th:href="@{/tourPackageRating/{tourPackageId}(tourPackageId=${tourPackage.getId()})}">
