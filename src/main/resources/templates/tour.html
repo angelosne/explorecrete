@@ -39,8 +39,10 @@
                                             <div class="room-wrap">
                                                 <div class="row">
                                                     <div class="col-md-6 col-sm-6">
-                                                        <div class="room-img"
-                                                             style="background-image: url(/images/room-1.jpg);"></div>
+                                                        <img class="tour-single-img"
+                                                             th:src="@{/images/{image}.jpg(image=${tour.get().getImage()})}">
+                                                        <!--                                                        <div class="room-img"-->
+                                                        <!--                                                             style="background-image: url(/images/room-1.jpg);"></div>-->
                                                     </div>
                                                     <div class="col-md-6 col-sm-6">
                                                         <div class="desc">
