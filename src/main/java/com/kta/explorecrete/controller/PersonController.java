@@ -27,16 +27,16 @@ public class PersonController {
     }
 
     @GetMapping("/person")
-    public String getPersonList(Model model){
+    public String getPersonList(Model model) {
         List<Person> persons = personService.findAll();
-        model.addAttribute("persons",persons);
+        model.addAttribute("persons", persons);
         return "persons";
     }
 
     @GetMapping("/person/{personId}")
-    public String getPersonById(@PathVariable("personId") int personId, Model model){
+    public String getPersonById(@PathVariable("personId") int personId, Model model) {
         Optional<Person> person = personService.findById(personId);
-        model.addAttribute("person",person);
+        model.addAttribute("person", person);
         return "person";
     }
 }

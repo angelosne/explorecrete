@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Controller
@@ -35,14 +34,16 @@ public class TourController {
     @GetMapping("/tours")
     public String getTourList(Model model){
         List<Tour> tours = tourService.findAll();
-        model.addAttribute("tours",tours);
+        model.addAttribute("tours", tours);
+        model.addAttribute("tourPackage", "Our Tours");
         return "tours";
     }
 
     @GetMapping("/tours/{tourId}")
     public String getToursByTourPackageId(@PathVariable int tourId,Model model){
-        Optional<Tour> tour = tourService.findById(tourId);
+        Tour tour = tourService.findById(tourId).orElse(null);
         model.addAttribute("tour",tour);
+
 
         return "tour";
     }

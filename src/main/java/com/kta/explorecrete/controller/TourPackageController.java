@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class TourPackageController {
@@ -42,8 +41,8 @@ public class TourPackageController {
     public String getTourById(@PathVariable int tourPackageId, Model model) {
         List<Tour> tours = tourService.findAllByTourPackageId(tourPackageId);
         model.addAttribute("tours", tours);
-        Optional<TourPackage> tourPackage = tourPackageService.findTourPackageById(tourPackageId);
-        model.addAttribute("tourPackage", tourPackage);
+        TourPackage tourPackage = tourPackageService.findTourPackageById(tourPackageId).orElse(null);
+        model.addAttribute("tourPackage", tourPackage.getName());
         return "tours";
     }
 
